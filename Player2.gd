@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+
 #Jump 
 export var fall_gravity_scale := 200.0
 export var low_jump_gravity_scale := 100.0
@@ -43,6 +44,7 @@ func _physics_process(delta):
 
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = SPEED
+		
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -SPEED
 	else: 
