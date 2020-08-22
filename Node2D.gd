@@ -14,13 +14,13 @@ var on_ground = false
 
 
 #Max Jumps 
-var maxJumps = 10
+var maxJumps = 3
 var remainingJumps = maxJumps
 
 func _process(delta):
 	if is_on_floor():
 		remainingJumps = maxJumps
-	if Input.is_action_just_pressed("move_jump"):
+	if Input.is_action_just_pressed("ui_up"):
 		if remainingJumps > 0:
 			remainingJumps -= 1
 			velocity.y = JUMP_POWER
