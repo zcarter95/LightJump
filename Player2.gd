@@ -1,5 +1,5 @@
 extends KinematicBody2D
-
+onready var animatedSprite = $AnimatedSprite
 
 #Jump 
 export var fall_gravity_scale := 200.0
@@ -44,12 +44,13 @@ func _physics_process(delta):
 
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = SPEED
-		
+		animatedSprite.play("Walk-right")
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -SPEED
 	else: 
 		velocity.x = 0
-#		
+		animatedSprite.play("Idle")
+
 	velocity = move_and_slide(velocity, Vector2.UP) 
 
 	if is_on_floor(): on_floor = true
