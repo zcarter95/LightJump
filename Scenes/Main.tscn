@@ -1,8 +1,9 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/4506e409f19cb2c92e1f6b4205eb821b.jpg" type="Texture" id=2]
 [ext_resource path="res://Tilesets/Ground Tileset.png" type="Texture" id=3]
+[ext_resource path="res://Player2.gd" type="Script" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -686,6 +687,7 @@ scale = Vector2( 2.23061, 2.19865 )
 texture = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+script = ExtResource( 4 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 73 )
