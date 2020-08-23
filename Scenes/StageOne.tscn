@@ -681,8 +681,10 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [node name="StageOne" type="Node2D"]
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
 [node name="4506e409f19cb2c92e1f6b4205eb821b" type="Sprite" parent="."]
-visible = false
 position = Vector2( 457.666, -173.601 )
 scale = Vector2( 2.23061, 2.19865 )
 texture = ExtResource( 4 )
