@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Pause-Menu.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Titlescreen/Exit-pressed.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Titlescreen/Menu.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Titlescreen/Menu-pressed.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Titlescreen/PauseMenu-fade.png" type="Texture" id=5]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/Exit.png-5b73b733fab02932c087f79561a44729.stex"
+
+[node name="Pause-Menu" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseMenu-fade" type="Sprite" parent="."]
+position = Vector2( 703.234, 434.688 )
+texture = ExtResource( 5 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -469.05
+margin_top = -212.375
+margin_right = 1450.95
+margin_bottom = 867.625
+size_flags_horizontal = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+margin_left = 810.0
+margin_right = 1110.0
+margin_bottom = 1080.0
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
+margin_top = 468.0
+margin_right = 300.0
+margin_bottom = 612.0
+size_flags_horizontal = 4
+
+[node name="TextureButton01" type="TextureButton" parent="MarginContainer/CenterContainer/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 65.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+
+[node name="TextureButton02" type="TextureButton" parent="MarginContainer/CenterContainer/VBoxContainer"]
+margin_top = 69.0
+margin_right = 300.0
+margin_bottom = 144.0
+texture_normal = SubResource( 1 )
+texture_pressed = ExtResource( 2 )
+[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/TextureButton01" to="." method="_on_TextureButton01_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/TextureButton02" to="." method="_on_TextureButton02_pressed"]
