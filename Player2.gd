@@ -9,6 +9,7 @@ export var jump_power := 500.0
 var jump_released = false
 const SPEED = 120
 
+
 #Physics
 var velocity = Vector2()
 var earth_gravity = 9.807 # m/s^2
@@ -30,8 +31,6 @@ func _physics_process(delta):
 		#Falling action is faster than jumping action | Like in mario
 		#On falling we apply a second gravity to thce player
 		#We apply ((gravity_scale + fall_gravity_scale) * earth_gravity) gravity on the player
-		animatedSprite.play ("Idle")
-		light2D.visible = false
 		velocity += Vector2.DOWN * earth_gravity * fall_gravity_scale * delta 
 		
 
@@ -47,8 +46,6 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_up"): 
 			velocity = Vector2.UP * jump_power #Normal Jump action			
 			jump_released = false
-	if Input.is_action_just_pressed("ui_up"):
-		animatedSprite.play("Jump")
 	
 	
 
@@ -56,17 +53,24 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = SPEED
 		animatedSprite.play("Walk-right")
+		light2D.visible = false
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -SPEED
 		animatedSprite.play("Walk-left")
-	else: 
+		light2D.visible = false
+	else:
 		velocity.x = 0
-		
-	if velocity.x && velocity.y == 0:
-		animatedSprite.play("Jump")
-		light2D.visible = true
+		if on_floor == true:
+			animatedSprite.play("Idle")
+			light2D.visible = true
+	if Input.is_action_pressed("ui_up"):
+		if on_floor == true:
+			animatedSprite.play("Jump")
+			light2D.visible = false
+			
 	
 	
+
 
 	velocity = move_and_slide(velocity, Vector2.UP) 
 
