@@ -699,3 +699,8 @@ tile_data = PoolIntArray( -1179593, 0, 4, -1179592, 0, 196609, -1179591, 0, 1966
 [node name="Pause-Menu" parent="CanvasLayer" instance=ExtResource( 5 )]
 pause_mode = 2
 visible = false
+anchor_left = -0.0247675
+anchor_top = -0.0600678
+anchor_right = 0.943006
+anchor_bottom = 0.824932
+rect_scale = Vector2( 1.05362, 0.990926 )

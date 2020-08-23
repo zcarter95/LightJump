@@ -39,7 +39,6 @@ func _physics_process(delta):
 	if on_floor:
 		if Input.is_action_just_pressed("ui_up"): 
 			velocity = Vector2.UP * jump_power #Normal Jump action
-			animatedSprite.play("Jump")
 			jump_released = false
 
 
@@ -48,7 +47,6 @@ func _physics_process(delta):
 		animatedSprite.play("Walk-right")
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -SPEED
-		animatedSprite.play()
 	else: 
 		velocity.x = 0
 		animatedSprite.play("Idle")
