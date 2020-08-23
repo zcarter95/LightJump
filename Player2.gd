@@ -28,6 +28,7 @@ func _physics_process(delta):
 		#On falling we apply a second gravity to thce player
 		#We apply ((gravity_scale + fall_gravity_scale) * earth_gravity) gravity on the player
 		velocity += Vector2.DOWN * earth_gravity * fall_gravity_scale * delta 
+		animatedSprite.play("Jump")
 
 	elif velocity.y < 0 && jump_released: #Player is jumping 
 		#Jump Height depends on how long you will hold key
@@ -47,6 +48,7 @@ func _physics_process(delta):
 		animatedSprite.play("Walk-right")
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -SPEED
+		animatedSprite.play("Walk-left")
 	else: 
 		velocity.x = 0
 		animatedSprite.play("Idle")
