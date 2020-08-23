@@ -1,5 +1,6 @@
 extends KinematicBody2D
 onready var animatedSprite = $AnimatedSprite
+onready var light2D = $Light2D
 
 #Jump 
 export var fall_gravity_scale := 200.0
@@ -18,17 +19,21 @@ var on_floor = false
 func _physics_process(delta):
 	if Input.is_action_just_released("ui_up"):
 		jump_released = true
+		
 
 	#Applying gravity to player
 	velocity += Vector2.DOWN * earth_gravity * gravity_scale * delta
+
 
 	#Jump Physics
 	if velocity.y > 0: #Player is falling
 		#Falling action is faster than jumping action | Like in mario
 		#On falling we apply a second gravity to thce player
 		#We apply ((gravity_scale + fall_gravity_scale) * earth_gravity) gravity on the player
+		animatedSprite.play ("Idle")
+		light2D.visible = false
 		velocity += Vector2.DOWN * earth_gravity * fall_gravity_scale * delta 
-		animatedSprite.play("Jump")
+		
 
 	elif velocity.y < 0 && jump_released: #Player is jumping 
 		#Jump Height depends on how long you will hold key
@@ -36,11 +41,16 @@ func _physics_process(delta):
 		#We apply ((gravity_scale + low_jump_gravity_scale) * earth_gravity) gravity on the player
 		#It result on a lower jump
 		velocity += Vector2.DOWN * earth_gravity * low_jump_gravity_scale * delta
+		
 
 	if on_floor:
 		if Input.is_action_just_pressed("ui_up"): 
-			velocity = Vector2.UP * jump_power #Normal Jump action
+			velocity = Vector2.UP * jump_power #Normal Jump action			
 			jump_released = false
+	if Input.is_action_just_pressed("ui_up"):
+		animatedSprite.play("Jump")
+	
+	
 
 
 	if Input.is_action_pressed("ui_right"):
@@ -51,9 +61,16 @@ func _physics_process(delta):
 		animatedSprite.play("Walk-left")
 	else: 
 		velocity.x = 0
-		animatedSprite.play("Idle")
+		
+	if velocity.x && velocity.y == 0:
+		animatedSprite.play("Jump")
+		light2D.visible = true
+	
+	
 
 	velocity = move_and_slide(velocity, Vector2.UP) 
 
 	if is_on_floor(): on_floor = true
 	else: on_floor = false
+
+	
