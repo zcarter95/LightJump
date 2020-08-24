@@ -6,6 +6,9 @@
 margin_right = 1040.0
 margin_bottom = 20.0
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="StartGame Text" type="TextureRect" parent="."]
 margin_right = 40.0
