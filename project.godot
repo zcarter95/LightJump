@@ -19,6 +19,11 @@ config/name="Jump Light"
 run/main_scene="res://Scenes/Title-Screen.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1280
+window/size/height=720
+
 [input]
 
 ui_left={
@@ -48,4 +53,5 @@ ui_down={
 
 [rendering]
 
+environment/default_clear_color=Color( 0.14902, 0.192157, 0.219608, 1 )
 environment/default_environment="res://default_env.tres"
