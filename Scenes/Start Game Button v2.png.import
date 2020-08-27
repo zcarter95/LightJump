@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Jump Light Title.png-a3924661c173eb23feb0adcab0c9c500.stex"
+path="res://.import/Start Game Button v2.png-ce2906ad62f817af12bc299826395593.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Jump Light Title.png"
-dest_files=[ "res://.import/Jump Light Title.png-a3924661c173eb23feb0adcab0c9c500.stex" ]
+source_file="res://Scenes/Start Game Button v2.png"
+dest_files=[ "res://.import/Start Game Button v2.png-ce2906ad62f817af12bc299826395593.stex" ]
 
 [params]
 
