@@ -4,6 +4,10 @@
 [ext_resource path="res://Tilesets/Start Game Button v2.png" type="Texture" id=2]
 
 [node name="StartGame" instance=ExtResource( 1 )]
+margin_bottom = 91.0
+scene_to_load = "res://Scenes/StageOne.tscn"
 
 [node name="TextureRect" parent="." index="0"]
+margin_right = 498.0
+margin_bottom = 96.0
 texture = ExtResource( 2 )

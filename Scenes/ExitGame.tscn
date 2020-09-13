@@ -4,6 +4,7 @@
 [ext_resource path="res://Tilesets/Exit Button v2.png" type="Texture" id=2]
 
 [node name="ExitGame" instance=ExtResource( 1 )]
+margin_bottom = 84.0
 
 [node name="TextureRect" parent="." index="0"]
 rect_min_size = Vector2( 360, 60 )
