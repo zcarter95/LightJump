@@ -1,8 +1,11 @@
 extends Control
 
-func _ready():
-	for button in $Menu/CenterRow/Buttons.get_children():
-		button.connect("pressed", self, "_on_button_pressed", [button.scene_to_load])
-		
-func _on_button_pressed(scene_to_load):
-	get_tree().change_scene(scene_to_load)
+onready var FadeIn = get_node("FadeIn")
+
+func _on_StartGame_pressed():
+		get_tree().change_scene("res://Scenes/StageOne.tscn")
+		FadeIn._fade_in()
+
+
+func _on_ExitGame_pressed():
+	get_tree().quit()
