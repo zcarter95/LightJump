@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Spikes.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Foreground.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Scene construction /Backgroujnd.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/885a1f1d4ecbf179e8ddba1722e77f2c.png" type="Texture" id=6]
 
@@ -12,10 +11,6 @@
 position = Vector2( 6.17334, -1074.95 )
 scale = Vector2( 2.96712, 2.46231 )
 texture = ExtResource( 6 )
-
-[node name="Background2" parent="." instance=ExtResource( 4 )]
-visible = false
-position = Vector2( 435.656, 53.5018 )
 
 [node name="Foreground2" parent="." instance=ExtResource( 3 )]
 position = Vector2( -210.407, 333.818 )
