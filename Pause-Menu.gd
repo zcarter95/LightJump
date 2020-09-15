@@ -23,7 +23,7 @@ func _on_TextureButton01_pressed():
 		visible = not visible
 		#menu
 func _on_TextureButton03_pressed():
-	get_tree().change_scene("res://Scenes/Title-Screen.tscn")
+	get_tree().change_scene("res://Scenes/Title Screen.tscn")
 		#Exit
 func _on_TextureButton02_pressed():
 	get_tree().quit()

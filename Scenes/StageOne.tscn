@@ -725,7 +725,6 @@ points = PoolVector2Array( 0.203136, 13.5996, 0.826225, 12.8986, 0.748341, 10.40
 [node name="StageOne" type="Node2D"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color( 0.027451, 0.027451, 0.027451, 1 )
 
 [node name="Backgroujnd" type="TileMap" parent="."]

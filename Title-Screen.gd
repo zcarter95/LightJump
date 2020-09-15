@@ -1,4 +1,4 @@
-xtends Node
+extends Node
 
 func _ready():
 	$MarginContainer/VBoxContainer/VBoxContainer/TextureButton.grab_focus()
