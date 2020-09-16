@@ -8,6 +8,7 @@
 [node name="StageTwo" type="Node2D"]
 
 [node name="885a1f1d4ecbf179e8ddba1722e77f2c" type="Sprite" parent="."]
+visible = false
 position = Vector2( 6.17334, -1074.95 )
 scale = Vector2( 2.96712, 2.46231 )
 texture = ExtResource( 6 )
